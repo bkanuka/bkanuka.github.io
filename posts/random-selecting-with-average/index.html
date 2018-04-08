@@ -1,0 +1,255 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Practical Machine Learning</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Bennett Kanuka" />
+  <meta name="generator" content="Hugo 0.38.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://bkanuka.com/css/styles.css" />
+  <link rel="stylesheet" href="http://bkanuka.com/css/custom.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://bkanuka.com/">Practical Machine Learning</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/bkanuka"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/bkanuka"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/bkanuka"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Guides in Machine Learning and Linux</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Blog</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Random Selection with Average</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-15T00:00:00Z">Apr 15, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/math/">#math</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/python/">#python</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/algorithm/">#algorithm</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>The goal of this project was to &ldquo;randomly&rdquo; select numbers from a predefined set, with replacement, in a way that the mean of the selected numbers would equal (or come close to) a specified number.
+For example, and the original motivation, was to select 100 numbers from the set:
+<code>$$ X = \left\{0, 0.1, 0.25, 0.5, 0.75, 0.8, 1.0\right\} $$</code>
+so that the mean of the selected numbers was <code>$ \approx 0.75 $</code></p>
+
+<p>Said a different way, given
+<code>$ n \in \mathbb{N}$</code>, <code>$X = \left\{x_1, x_2, \ldots, x_m\right\}$</code> and <code>$ \mu $</code>
+find <code>$ a_1, a_2, \ldots, a_m \in \mathbb{N}$</code> such that:
+<code>
+$$ 
+\frac{1}{n}\sum_{i = 1}^m a_i x_i \approx \mu 
+\quad \text{and} \quad
+\sum_{i = 1}^m a_i = n
+$$
+</code></p>
+
+<p><code>$a_i$</code> will tell us how many times to select each
+Now obviously, this isn&rsquo;t something that can be solved deterministically, and there might be many different ways of selecting our $$ a_i $$.
+For example, consider $$ X = \left{0, 0.5, 1.0\right} $$, $$ \mu = 0.5 $$, and $$ n = 20 $$.
+We would be right to select 20 &ldquo;0.5&rdquo;s, or 10 &ldquo;0&rdquo;s and 10 &ldquo;1.0&rdquo;s.
+Both methods would create a mean exactly equal to 0.5.
+Therefore, it would be nice to have some sort of parameter that determined the &ldquo;shape&rdquo; of our selection, whether the selection was all from the extremes, or tightly grouped around the mean.</p>
+
+<p>In order to solve both these issues, I decided to randomly select numbers from a probability distribution with finite support on $$ [\min(X), \max(X)] $$ and round to the nearest $$ x \in X $$.<br />
+Consider the <a href="http://en.wikipedia.org/wiki/Beta_distribution">beta distribution</a></p>
+
+<p>$$ f(x;\alpha,\beta) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{\int_0^1 u^{\alpha-1} (1-u)^{\beta-1}\, du} $$</p>
+
+<p>where $$ \alpha &gt; 0 $$ and $$ \beta &gt; 0 $$.
+The beta distribution is a nice choice for this problem for two reasons.
+First is because of its finite support on the interval $$ [0, 1] $$.
+Second, its mean is very easy to calculate.</p>
+
+<p>$$ \mu = \frac{\alpha}{\alpha + \beta} $$</p>
+
+<p>This means we can intelligently select $$ \alpha $$ and $$ \beta $$ (or select one and fix the other using the above), select random numbers, round to the nearest $$x \in X $$ and the average should be pretty close to $$ \mu $$. This turned out to be good enough for my purposes, and the program to do this is written below.</p>
+
+<script src="//gist.github.com/bkanuka/10692062.js"></script>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="http://bkanuka.com/posts/merge-images-letter-pdf/"><i class="fa fa-chevron-circle-left"></i> img2pdf: Merge and resize images into a PDF</a>
+        </li>
+        
+        
+        <li>
+            <a href="http://bkanuka.com/posts/native-latex-plots/">Native Looking matplotlib Plots in LaTeX <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'bkanuka';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Bennett Kanuka | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://bkanuka.com/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://bkanuka.com/js/scripts.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript">
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+</body>
+
+</html>

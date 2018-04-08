@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://bkanuka.com/posts/</loc>
+    <lastmod>2018-01-02T20:16:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/hdcp-hdmi-capture/</loc>
+    <lastmod>2018-01-02T20:16:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/windows-10-libvirt/</loc>
+    <lastmod>2017-12-28T07:51:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/windows-as-an-app/</loc>
+    <lastmod>2017-12-25T08:22:40-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/about/</loc>
+    <lastmod>2017-12-23T21:16:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/drawing-regular-n-gons/</loc>
+    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/mathematica-to-python/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/native-latex-plots/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/random-selecting-with-average/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/posts/merge-images-letter-pdf/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/algorithm/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/automation/</loc>
+    <lastmod>2018-01-02T20:16:04-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/code/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/htpc/</loc>
+    <lastmod>2018-01-02T20:16:04-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/latex/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/linux/</loc>
+    <lastmod>2018-01-02T20:16:04-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/math/</loc>
+    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/matplotlib/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/pdf/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/</loc>
+    <lastmod>2018-01-02T20:16:04-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/python/</loc>
+    <lastmod>2014-04-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/script/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bkanuka.com/tags/tricks/</loc>
+    <lastmod>2014-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

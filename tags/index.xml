@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Practical Machine Learning</title>
+    <link>http://bkanuka.com/tags/</link>
+    <description>Recent content in Tags on Practical Machine Learning</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2017 - Bennett Kanuka</copyright>
+    <lastBuildDate>Tue, 15 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://bkanuka.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm</title>
+      <link>http://bkanuka.com/tags/algorithm/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>http://bkanuka.com/tags/automation/</link>
+      <pubDate>Tue, 02 Jan 2018 20:16:04 -0500</pubDate>
+      
+      <guid>http://bkanuka.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>http://bkanuka.com/tags/code/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Htpc</title>
+      <link>http://bkanuka.com/tags/htpc/</link>
+      <pubDate>Tue, 02 Jan 2018 20:16:04 -0500</pubDate>
+      
+      <guid>http://bkanuka.com/tags/htpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
+      <link>http://bkanuka.com/tags/latex/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://bkanuka.com/tags/linux/</link>
+      <pubDate>Tue, 02 Jan 2018 20:16:04 -0500</pubDate>
+      
+      <guid>http://bkanuka.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>http://bkanuka.com/tags/math/</link>
+      <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matplotlib</title>
+      <link>http://bkanuka.com/tags/matplotlib/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/matplotlib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pdf</title>
+      <link>http://bkanuka.com/tags/pdf/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/pdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://bkanuka.com/tags/python/</link>
+      <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Script</title>
+      <link>http://bkanuka.com/tags/script/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tricks</title>
+      <link>http://bkanuka.com/tags/tricks/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/tags/tricks/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

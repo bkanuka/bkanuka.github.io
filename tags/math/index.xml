@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math on Practical Machine Learning</title>
+    <link>http://bkanuka.com/tags/math/</link>
+    <description>Recent content in Math on Practical Machine Learning</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2017 - Bennett Kanuka</copyright>
+    <lastBuildDate>Thu, 17 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://bkanuka.com/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Drawing Regular n-gons with Horizontal Bottom</title>
+      <link>http://bkanuka.com/posts/drawing-regular-n-gons/</link>
+      <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/drawing-regular-n-gons/</guid>
+      <description>We start with the unit circle centered at (0,0). The coordinates of any point on the circle are given by:  $$ \begin{align*} x &amp;amp;= \cos (t) \\ y &amp;amp;= \sin (t) \end{align*} $$  Therefore we can find the coordinates of the regular n-gon at:  $$ \begin{align*} x &amp;amp;= \cos \left(k \frac{2 \pi}{n}\right) \\ y &amp;amp;= \sin \left(k \frac{2 \pi}{n}\right) \quad \text{where } k = 0, 1, \ldots n \end{align*} $$</description>
+    </item>
+    
+    <item>
+      <title>Random Selection with Average</title>
+      <link>http://bkanuka.com/posts/random-selecting-with-average/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/random-selecting-with-average/</guid>
+      <description>The goal of this project was to &amp;ldquo;randomly&amp;rdquo; select numbers from a predefined set, with replacement, in a way that the mean of the selected numbers would equal (or come close to) a specified number. For example, and the original motivation, was to select 100 numbers from the set: $$ X = \left\{0, 0.1, 0.25, 0.5, 0.75, 0.8, 1.0\right\} $$ so that the mean of the selected numbers was $ \approx 0.</description>
+    </item>
+    
+  </channel>
+</rss>

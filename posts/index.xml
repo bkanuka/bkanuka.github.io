@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Practical Machine Learning</title>
+    <link>http://bkanuka.com/posts/</link>
+    <description>Recent content in Blog on Practical Machine Learning</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2017 - Bennett Kanuka</copyright>
+    <lastBuildDate>Tue, 02 Jan 2018 20:16:04 -0500</lastBuildDate>
+    
+	<atom:link href="http://bkanuka.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HDCP HDMI Capture</title>
+      <link>http://bkanuka.com/posts/hdcp-hdmi-capture/</link>
+      <pubDate>Tue, 02 Jan 2018 20:16:04 -0500</pubDate>
+      
+      <guid>http://bkanuka.com/posts/hdcp-hdmi-capture/</guid>
+      <description>Introduction I&amp;rsquo;m working on integrating a Chromecast with Kodi. Basically I want Kodi and my HTPC to work as a receiver, and handle all the input switching and video sources. Everything runs through Kodi and my TV is only ever on one input.
+Why? Because it gives me more control. I can put Kodi menus over a Chromecast video in the background. I can turn off the TV when it&amp;rsquo;s not in use, regardless of what input it is on.</description>
+    </item>
+    
+    <item>
+      <title>Installing Windows 10 in KVM &#43; libvirt</title>
+      <link>http://bkanuka.com/posts/windows-10-libvirt/</link>
+      <pubDate>Thu, 28 Dec 2017 07:51:54 -0500</pubDate>
+      
+      <guid>http://bkanuka.com/posts/windows-10-libvirt/</guid>
+      <description>There&amp;rsquo;s a few &amp;ldquo;tricks&amp;rdquo; that are good to know when installing Windows 10 on kvm/libvirt. This is the way I install a Windows 10 VM and I&amp;rsquo;ll try to explain each step of the process. I&amp;rsquo;ll say right away that this may look like a very long post and therefore a long process, but the length is just images and this probably takes about 30 minutes if you chug through it!</description>
+    </item>
+    
+    <item>
+      <title>Windows VM Launcher</title>
+      <link>http://bkanuka.com/posts/windows-as-an-app/</link>
+      <pubDate>Mon, 25 Dec 2017 08:22:40 -0500</pubDate>
+      
+      <guid>http://bkanuka.com/posts/windows-as-an-app/</guid>
+      <description>Create ~/.local/share/applications/windows.desktop with the following content:
+[Desktop Entry] Version=1.0 Name=Windows 10 Comment=Starts the Windows 10 VM Exec=bash -c &#39;virsh start Windows10 &amp;amp;&amp;amp; virt-viewer --wait -c qemu:///system Windows10 &amp;amp;&amp;amp; virsh shutdown Windows10&#39; Icon=windows Type=Application  Under Exec change Windows10 to whatever you&amp;rsquo;ve named your VM. After logging out and back in, you will now have Windows 10 as an &amp;ldquo;application&amp;rdquo; that you can run from your launcher (Unity or Gnome Shell or whatever it is).</description>
+    </item>
+    
+    <item>
+      <title>Drawing Regular n-gons with Horizontal Bottom</title>
+      <link>http://bkanuka.com/posts/drawing-regular-n-gons/</link>
+      <pubDate>Thu, 17 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/drawing-regular-n-gons/</guid>
+      <description>We start with the unit circle centered at (0,0). The coordinates of any point on the circle are given by:  $$ \begin{align*} x &amp;amp;= \cos (t) \\ y &amp;amp;= \sin (t) \end{align*} $$  Therefore we can find the coordinates of the regular n-gon at:  $$ \begin{align*} x &amp;amp;= \cos \left(k \frac{2 \pi}{n}\right) \\ y &amp;amp;= \sin \left(k \frac{2 \pi}{n}\right) \quad \text{where } k = 0, 1, \ldots n \end{align*} $$</description>
+    </item>
+    
+    <item>
+      <title>Convert Mathematica Equation to Python</title>
+      <link>http://bkanuka.com/posts/mathematica-to-python/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/mathematica-to-python/</guid>
+      <description>I recently used Mathematica to solve a Lagrangian differential equation. I wish I could have used Sage but I was unable to find a simple way to program the Euler-Lagrange equation into a function. See this bug report. Mathematica on the other hand, came with a reference notebook with the Lagrangian and E-L equations built-in.
+I solved the equations in Mathematica, but needed to use the resulting equations in Python code.</description>
+    </item>
+    
+    <item>
+      <title>Native Looking matplotlib Plots in LaTeX</title>
+      <link>http://bkanuka.com/posts/native-latex-plots/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/native-latex-plots/</guid>
+      <description>I write most of my math/numerical analysis scripts in Python, and I tend to use matplotlib for plotting. When including a matplotlib plot in LaTeX I got the highest quality results by saving the plot as a PDF and using \includegraphics{plot.pdf} in LaTeX. However, it bothered me that the plot had different fonts and font sizes than the rest of the document. Here&amp;rsquo;s how I fixed that.
+Figure Width I always choose the size of my plots as a percentage of the text width.</description>
+    </item>
+    
+    <item>
+      <title>Random Selection with Average</title>
+      <link>http://bkanuka.com/posts/random-selecting-with-average/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/random-selecting-with-average/</guid>
+      <description>The goal of this project was to &amp;ldquo;randomly&amp;rdquo; select numbers from a predefined set, with replacement, in a way that the mean of the selected numbers would equal (or come close to) a specified number. For example, and the original motivation, was to select 100 numbers from the set: $$ X = \left\{0, 0.1, 0.25, 0.5, 0.75, 0.8, 1.0\right\} $$ so that the mean of the selected numbers was $ \approx 0.</description>
+    </item>
+    
+    <item>
+      <title>img2pdf: Merge and resize images into a PDF</title>
+      <link>http://bkanuka.com/posts/merge-images-letter-pdf/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/merge-images-letter-pdf/</guid>
+      <description>I was recently emailed a bunch of JPEG files of a scanned document. There was a file for every page, and the image files were very large. I wanted to get them all in a single PDF file on letter size paper. Because I find PDF mystical and difficult to work with, I decided to stick to tools I know - and I know LaTeX.
+In no time I learned how to use the ImageMagick tool convert to convert to PDF.</description>
+    </item>
+    
+  </channel>
+</rss>

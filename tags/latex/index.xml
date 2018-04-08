@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on Practical Machine Learning</title>
+    <link>http://bkanuka.com/tags/latex/</link>
+    <description>Recent content in Latex on Practical Machine Learning</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2017 - Bennett Kanuka</copyright>
+    <lastBuildDate>Tue, 15 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://bkanuka.com/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Native Looking matplotlib Plots in LaTeX</title>
+      <link>http://bkanuka.com/posts/native-latex-plots/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/native-latex-plots/</guid>
+      <description>I write most of my math/numerical analysis scripts in Python, and I tend to use matplotlib for plotting. When including a matplotlib plot in LaTeX I got the highest quality results by saving the plot as a PDF and using \includegraphics{plot.pdf} in LaTeX. However, it bothered me that the plot had different fonts and font sizes than the rest of the document. Here&amp;rsquo;s how I fixed that.
+Figure Width I always choose the size of my plots as a percentage of the text width.</description>
+    </item>
+    
+    <item>
+      <title>Native Looking matplotlib Plots in LaTeX</title>
+      <link>http://bkanuka.com/posts/native-latex-plots/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/native-latex-plots/</guid>
+      <description>I write most of my math/numerical analysis scripts in Python, and I tend to use matplotlib for plotting. When including a matplotlib plot in LaTeX I got the highest quality results by saving the plot as a PDF and using \includegraphics{plot.pdf} in LaTeX. However, it bothered me that the plot had different fonts and font sizes than the rest of the document. Here&amp;rsquo;s how I fixed that.
+Figure Width I always choose the size of my plots as a percentage of the text width.</description>
+    </item>
+    
+    <item>
+      <title>img2pdf: Merge and resize images into a PDF</title>
+      <link>http://bkanuka.com/posts/merge-images-letter-pdf/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/merge-images-letter-pdf/</guid>
+      <description>I was recently emailed a bunch of JPEG files of a scanned document. There was a file for every page, and the image files were very large. I wanted to get them all in a single PDF file on letter size paper. Because I find PDF mystical and difficult to work with, I decided to stick to tools I know - and I know LaTeX.
+In no time I learned how to use the ImageMagick tool convert to convert to PDF.</description>
+    </item>
+    
+  </channel>
+</rss>

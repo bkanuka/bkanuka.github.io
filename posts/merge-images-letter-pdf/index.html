@@ -1,0 +1,207 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Practical Machine Learning</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Bennett Kanuka" />
+  <meta name="generator" content="Hugo 0.38.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://bkanuka.com/css/styles.css" />
+  <link rel="stylesheet" href="http://bkanuka.com/css/custom.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://bkanuka.com/">Practical Machine Learning</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/bkanuka"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/bkanuka"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/bkanuka"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Guides in Machine Learning and Linux</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Blog</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>img2pdf: Merge and resize images into a PDF</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-15T00:00:00Z">Apr 15, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/latex/">#latex</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/code/">#code</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/pdf/">#pdf</a>
+                
+            </em>
+        </li>
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>I was recently emailed a bunch of JPEG files of a scanned document.
+There was a file for every page, and the image files were very large.
+I wanted to get them all in a single PDF file on letter size paper.
+Because I find PDF mystical and difficult to work with, I decided to stick to tools I know - and I know LaTeX.</p>
+
+<p>In no time I learned how to use the ImageMagick tool <code>convert</code> to convert to PDF.
+Assuming that our original files are named <code>page1.jpg</code>, <code>page2.jpg</code>, etc. I could do:</p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">convert page* -format pdf merge.pdf</code></pre></div>
+However, this made a PDF sized to the images, rather than forcing a letter size page.</p>
+
+<p>Instead, I did the following.
+First, I resized the images to something reasonable using <code>convert</code> (they were insanely large).</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">convert page* -resize <span style="color:#ae81ff">50</span>% -format jpg page.jpg</code></pre></div>
+
+<p>This created files <code>page-0.jpg</code> through <code>page-4.jpg</code> with smaller sizes.</p>
+
+<p>Then I wrote the following script, which I called <code>img2pdf</code> which takes images files as arguments and converts to PDF.
+Save the GitHub gist to a file and mark it as executable.
+<code>img2pdf -h</code> has usage instructions, but it&rsquo;s simple enough to figure out.</p>
+
+<script src="//gist.github.com/bkanuka/10767052.js"></script>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        
+        <li>
+            <a href="http://bkanuka.com/posts/random-selecting-with-average/">Random Selection with Average <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'bkanuka';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Bennett Kanuka | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://bkanuka.com/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://bkanuka.com/js/scripts.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Practical Machine Learning</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Bennett Kanuka" />
+  <meta name="generator" content="Hugo 0.38.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://bkanuka.com/css/styles.css" />
+  <link rel="stylesheet" href="http://bkanuka.com/css/custom.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://bkanuka.com/">Practical Machine Learning</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/bkanuka"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/bkanuka"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/bkanuka"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Guides in Machine Learning and Linux</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Blog</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<section id="home">
+        <ul>
+          
+          <li class="first">
+            <h1><a href="http://bkanuka.com/posts/hdcp-hdmi-capture/" title="HDCP HDMI Capture">HDCP HDMI Capture</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-01-02T20:16:04-05:00">Jan 2, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/linux/">#linux</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/htpc/">#htpc</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/automation/">#automation</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+            <p>Introduction I&rsquo;m working on integrating a Chromecast with Kodi. Basically I want Kodi and my HTPC to work as a receiver, and handle all the input switching and video sources. Everything runs through Kodi and my TV is only ever on one input.
+Why? Because it gives me more control. I can put Kodi menus over a Chromecast video in the background. I can turn off the TV when it&rsquo;s not in use, regardless of what input it is on.</p>
+            
+            <a href="http://bkanuka.com/posts/hdcp-hdmi-capture/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/windows-10-libvirt/" title="Installing Windows 10 in KVM &#43; libvirt">Installing Windows 10 in KVM &#43; libvirt</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2017-12-28T07:51:54-05:00">Dec 28, 2017</time>
+        </li>
+        
+        
+
+        
+
+        <li>7 min read</li>
+    </ul>
+</aside>
+            <p>There&rsquo;s a few &ldquo;tricks&rdquo; that are good to know when installing Windows 10 on kvm/libvirt. This is the way I install a Windows 10 VM and I&rsquo;ll try to explain each step of the process. I&rsquo;ll say right away that this may look like a very long post and therefore a long process, but the length is just images and this probably takes about 30 minutes if you chug through it!</p>
+            
+            <a href="http://bkanuka.com/posts/windows-10-libvirt/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/windows-as-an-app/" title="Windows VM Launcher">Windows VM Launcher</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2017-12-25T08:22:40-05:00">Dec 25, 2017</time>
+        </li>
+        
+        
+
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+            <p>Create ~/.local/share/applications/windows.desktop with the following content:
+[Desktop Entry] Version=1.0 Name=Windows 10 Comment=Starts the Windows 10 VM Exec=bash -c 'virsh start Windows10 &amp;&amp; virt-viewer --wait -c qemu:///system Windows10 &amp;&amp; virsh shutdown Windows10' Icon=windows Type=Application  Under Exec change Windows10 to whatever you&rsquo;ve named your VM. After logging out and back in, you will now have Windows 10 as an &ldquo;application&rdquo; that you can run from your launcher (Unity or Gnome Shell or whatever it is).</p>
+            
+            <a href="http://bkanuka.com/posts/windows-as-an-app/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/drawing-regular-n-gons/" title="Drawing Regular n-gons with Horizontal Bottom">Drawing Regular n-gons with Horizontal Bottom</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-17T00:00:00Z">Apr 17, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/math/">#math</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/python/">#python</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+            <p>We start with the unit circle centered at (0,0). The coordinates of any point on the circle are given by:  $$ \begin{align*} x &amp;= \cos (t) \\ y &amp;= \sin (t) \end{align*} $$  Therefore we can find the coordinates of the regular n-gon at:  $$ \begin{align*} x &amp;= \cos \left(k \frac{2 \pi}{n}\right) \\ y &amp;= \sin \left(k \frac{2 \pi}{n}\right) \quad \text{where } k = 0, 1, \ldots n \end{align*} $$</p>
+            
+            <a href="http://bkanuka.com/posts/drawing-regular-n-gons/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/mathematica-to-python/" title="Convert Mathematica Equation to Python">Convert Mathematica Equation to Python</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-15T00:00:00Z">Apr 15, 2014</time>
+        </li>
+        
+        
+
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+            <p>I recently used Mathematica to solve a Lagrangian differential equation. I wish I could have used Sage but I was unable to find a simple way to program the Euler-Lagrange equation into a function. See this bug report. Mathematica on the other hand, came with a reference notebook with the Lagrangian and E-L equations built-in.
+I solved the equations in Mathematica, but needed to use the resulting equations in Python code.</p>
+            
+            <a href="http://bkanuka.com/posts/mathematica-to-python/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/native-latex-plots/" title="Native Looking matplotlib Plots in LaTeX">Native Looking matplotlib Plots in LaTeX</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-15T00:00:00Z">Apr 15, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/latex/">#latex</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/matplotlib/">#matplotlib</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/latex/">#latex</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/tricks/">#tricks</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/script/">#script</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+            <p>I write most of my math/numerical analysis scripts in Python, and I tend to use matplotlib for plotting. When including a matplotlib plot in LaTeX I got the highest quality results by saving the plot as a PDF and using \includegraphics{plot.pdf} in LaTeX. However, it bothered me that the plot had different fonts and font sizes than the rest of the document. Here&rsquo;s how I fixed that.
+Figure Width I always choose the size of my plots as a percentage of the text width.</p>
+            
+            <a href="http://bkanuka.com/posts/native-latex-plots/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/random-selecting-with-average/" title="Random Selection with Average">Random Selection with Average</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-15T00:00:00Z">Apr 15, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/math/">#math</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/python/">#python</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/algorithm/">#algorithm</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+            <p>The goal of this project was to &ldquo;randomly&rdquo; select numbers from a predefined set, with replacement, in a way that the mean of the selected numbers would equal (or come close to) a specified number. For example, and the original motivation, was to select 100 numbers from the set: $$ X = \left\{0, 0.1, 0.25, 0.5, 0.75, 0.8, 1.0\right\} $$ so that the mean of the selected numbers was $ \approx 0.</p>
+            
+            <a href="http://bkanuka.com/posts/random-selecting-with-average/">Read more&hellip;</a>
+            
+          </li>
+          
+          <li >
+            <h1><a href="http://bkanuka.com/posts/merge-images-letter-pdf/" title="img2pdf: Merge and resize images into a PDF">img2pdf: Merge and resize images into a PDF</a></h1> 
+            <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-15T00:00:00Z">Apr 15, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/latex/">#latex</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/code/">#code</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/pdf/">#pdf</a>
+                
+            </em>
+        </li>
+        
+
+        <li>1 min read</li>
+    </ul>
+</aside>
+            <p>I was recently emailed a bunch of JPEG files of a scanned document. There was a file for every page, and the image files were very large. I wanted to get them all in a single PDF file on letter size paper. Because I find PDF mystical and difficult to work with, I decided to stick to tools I know - and I know LaTeX.
+In no time I learned how to use the ImageMagick tool convert to convert to PDF.</p>
+            
+            <a href="http://bkanuka.com/posts/merge-images-letter-pdf/">Read more&hellip;</a>
+            
+          </li>
+          
+        </ul>
+      </section>
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Bennett Kanuka | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://bkanuka.com/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://bkanuka.com/js/scripts.js"></script>
+
+</body>
+
+</html>

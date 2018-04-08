@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Practical Machine Learning</title>
+    <link>http://bkanuka.com/tags/algorithm/</link>
+    <description>Recent content in Algorithm on Practical Machine Learning</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2017 - Bennett Kanuka</copyright>
+    <lastBuildDate>Tue, 15 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://bkanuka.com/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Random Selection with Average</title>
+      <link>http://bkanuka.com/posts/random-selecting-with-average/</link>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://bkanuka.com/posts/random-selecting-with-average/</guid>
+      <description>The goal of this project was to &amp;ldquo;randomly&amp;rdquo; select numbers from a predefined set, with replacement, in a way that the mean of the selected numbers would equal (or come close to) a specified number. For example, and the original motivation, was to select 100 numbers from the set: $$ X = \left\{0, 0.1, 0.25, 0.5, 0.75, 0.8, 1.0\right\} $$ so that the mean of the selected numbers was $ \approx 0.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,211 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Practical Machine Learning</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Bennett Kanuka" />
+  <meta name="generator" content="Hugo 0.38.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://bkanuka.com/css/styles.css" />
+  <link rel="stylesheet" href="http://bkanuka.com/css/custom.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://bkanuka.com/">Practical Machine Learning</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/bkanuka"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/bkanuka"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/bkanuka"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Guides in Machine Learning and Linux</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Blog</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>HDCP HDMI Capture</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-01-02T20:16:04-05:00">Jan 2, 2018</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/linux/">#linux</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/htpc/">#htpc</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/automation/">#automation</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>I&rsquo;m working on integrating a Chromecast with Kodi.
+Basically I want Kodi and my HTPC to work as a receiver, and handle all the input switching and video sources.
+Everything runs through Kodi and my TV is only ever on one input.</p>
+
+<p>Why? Because it gives me more control. I can put Kodi menus over a Chromecast video in the background. I can turn off the TV when it&rsquo;s not in use, regardless of what input it is on. I can turn my (non-HDMI) stereo on when the Chromecast goes on, etc. But most of all, it&rsquo;s just a goal I&rsquo;ve had for a while to build my own home theater &ldquo;receiver&rdquo;, and this brings me closer.</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>So I want to route an HDMI signal from a Chromecast (or anything else really) through my Linux PC.
+Of course I might run into a problem - HDCP.
+I typically wouldn&rsquo;t blog about cracking or circumventing encryption, but HDCP is laughably easy to circumvent and many other blogs link to HDMI splitters that can be used.</p>
+
+<p>I don&rsquo;t like the splitters because they&rsquo;re ugly and add a lot of wire clutter.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>I came across a Chinese company called <a href="http://www.szminetech.com">Mine Technology</a> that manufactures a lot of HDMI devices, many of which &ldquo;forget&rdquo; to check for HDCP. Not all of their devices forget about HDCP, but they are easy enough to email and ask.</p>
+
+<p>I purchased an <a href="https://www.aliexpress.com/store/product/Cheap-Selling-1080p-30fps-One-Channel-PCIE-Full-HD-Video-Audio-Capture-Card-HDMI-Media-PCI/502381_32808405631.html">HD887 1 CH HDMI Video Capture Card</a> from AliExpress because it was their cheapest HDMI capture option and it arrived in just a few days.</p>
+
+<p>Another option is an H.264/H.265 encoder like the <a href="https://www.aliexpress.com/store/product/Mine-E-1005-H-265-HDMI-Video-Encoder-for-IPTV-Live-Stream-Broadcast-by-RTMP-HTTP/502381_32619723360.html">E1005S H.265 HDMI Video Encoder</a>. This will output a network stream that your Kodi box can pick up and play - and of course doesn&rsquo;t require a PCI slot.</p>
+
+<p>Hope this helps!</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="http://bkanuka.com/posts/windows-10-libvirt/"><i class="fa fa-chevron-circle-left"></i> Installing Windows 10 in KVM &#43; libvirt</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'bkanuka';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Bennett Kanuka | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://bkanuka.com/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://bkanuka.com/js/scripts.js"></script>
+
+</body>
+
+</html>

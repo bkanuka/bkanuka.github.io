@@ -1,0 +1,299 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Practical Machine Learning</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Bennett Kanuka" />
+  <meta name="generator" content="Hugo 0.38.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://bkanuka.com/css/styles.css" />
+  <link rel="stylesheet" href="http://bkanuka.com/css/custom.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://bkanuka.com/">Practical Machine Learning</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/bkanuka"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/bkanuka"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/bkanuka"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Guides in Machine Learning and Linux</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Blog</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Drawing Regular n-gons with Horizontal Bottom</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2014-04-17T00:00:00Z">Apr 17, 2014</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="http://bkanuka.com/tags/math/">#math</a>
+                
+                    , 
+                    <a href="http://bkanuka.com/tags/python/">#python</a>
+                
+            </em>
+        </li>
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>We start with the unit circle centered at (0,0).
+The coordinates of any point on the circle are given by:
+<code>
+$$
+\begin{align*}
+x &amp;= \cos (t) \\
+y &amp;= \sin (t)
+\end{align*}
+$$
+</code>
+Therefore we can find the coordinates of the regular n-gon at:
+<code>
+$$
+\begin{align*}
+x &amp;= \cos \left(k \frac{2 \pi}{n}\right) \\
+y &amp;= \sin \left(k \frac{2 \pi}{n}\right) \quad \text{where } k = 0, 1, \ldots n
+\end{align*}
+$$
+</code></p>
+
+<p>However, this does not guarantee that the n-gon&rsquo;s bottom edge will be horizontal (something we&rsquo;d want for a visually pleasing drawing).
+To the above formula, we can apply a starting angle <code>$t$</code> measured from the x-axis.
+<code>
+$$
+\begin{align*}
+x &amp;= \cos \left(t + k \frac{2 \pi}{n}\right) \\
+y &amp;= \sin \left(t + k \frac{2 \pi}{n}\right)
+\end{align*}
+$$
+</code></p>
+
+<p>Changing <code>$t$</code> will rotate the n-gon&rsquo;s starting vertex.
+To guarantee the bottom edge is horizontal, we rotate the starting vertex to the bottom of the unit circle, and then one half of <code>$ \frac{2 \pi}{n} $</code>, or
+<code>
+$$
+\begin{align*}
+t &amp;= \frac{-\pi}{2} + \frac{1}{2}\frac{2 \pi}{n} \\
+  &amp;= \frac{-\pi}{2} + \frac{\pi}{n}
+\end{align*}
+$$
+</code>
+<code>
+$$
+\begin{align*}
+x &amp;= \cos \left(\frac{-\pi}{2} + \frac{\pi}{n} + k \frac{2 \pi}{n}\right) \\
+y &amp;= \sin \left(\frac{-\pi}{2} + \frac{\pi}{n} + k \frac{2 \pi}{n}\right)
+\end{align*}
+$$
+</code>
+And using the trig identities,
+<code>
+$$
+\begin{align*}
+\cos \left(\frac{-\pi}{2} + \theta\right) 
+    &amp;= \cos \left(-\left(\frac{\pi}{2} - \theta\right)\right) 
+    = \cos \left(\frac{\pi}{2} - \theta\right) 
+    = \sin (\theta) \\
+\sin \left(\frac{-\pi}{2} + \theta\right) 
+    &amp;= \sin \left(-\left(\frac{\pi}{2} - \theta\right)\right) 
+    = -\sin \left(\frac{\pi}{2} - \theta\right) 
+    = -\cos (\theta)
+\end{align*}
+$$
+</code>
+we can simplify the equations to:
+<code>
+$$
+\begin{align*}
+x &amp;= \sin \left(\frac{\pi}{n} + k \frac{2 \pi}{n}\right) \\
+y &amp;= - \cos \left(\frac{\pi}{n} + k \frac{2 \pi}{n}\right)
+\end{align*}
+$$
+</code></p>
+
+<p>If we are interested in drawing an n-gon with circumcircle of radius <code>$r$</code>, centered at <code>$(a,b)$</code>
+then we can simply multiply by <code>$r$</code> and add an offset.
+Therefore, the vertecies of a regular n-gon (with horizontal bottom) can be found at:
+<code>
+$$
+\begin{align*}
+x &amp;= a + r \sin \left(\frac{\pi}{n} + k \frac{2 \pi}{n}\right) \\
+y &amp;= b - r \cos \left(\frac{\pi}{n} + k \frac{2 \pi}{n}\right) \quad \text{where } k = 0, 1, \ldots n
+\end{align*}
+$$
+</code></p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="http://bkanuka.com/posts/mathematica-to-python/"><i class="fa fa-chevron-circle-left"></i> Convert Mathematica Equation to Python</a>
+        </li>
+        
+        
+        <li>
+            <a href="http://bkanuka.com/posts/windows-as-an-app/">Windows VM Launcher <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'bkanuka';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Bennett Kanuka | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://bkanuka.com/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://bkanuka.com/js/scripts.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/javascript">
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+
+</body>
+
+</html>
