@@ -1,0 +1,263 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Practical Machine Learning</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Bennett Kanuka" />
+  <meta name="generator" content="Hugo 0.38.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="http://bkanuka.com/css/styles.css" />
+  <link rel="stylesheet" href="http://bkanuka.com/css/custom.css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="http://bkanuka.com/">Practical Machine Learning</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/bkanuka"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/bkanuka"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/bkanuka"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Guides in Machine Learning and Linux</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Blog</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="http://bkanuka.com/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Box Cli Download</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-04-11T22:15:50-04:00">Apr 11, 2018</time>
+        </li>
+        
+        
+
+        
+
+        <li>2 min read</li>
+    </ul>
+</aside>
+    
+
+    <p>I recently needed to download a folder from a shared Box drive programmatically. I also wanted some basic sync ability (only download the file from Box if the file has changed).</p>
+
+<p>Box has created a cli that seems to work in Windows and Mac, but guess what OS I&rsquo;m using&hellip;. ;-) Anyway, even if the CLI did work, I&rsquo;d still need some script to call it. So I wrote my own script to do this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python3</span>
+<span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> hashlib
+
+<span style="color:#f92672">from</span> urllib <span style="color:#f92672">import</span> parse
+<span style="color:#f92672">from</span> boxsdk <span style="color:#f92672">import</span> OAuth2
+<span style="color:#f92672">from</span> boxsdk <span style="color:#f92672">import</span> Client
+
+CLIENT_ID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_OWN_CLIENT_ID&#39;</span>
+CLIENT_SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;YOUR_OWN_CLIENT_SECRET&#39;</span>
+BOX_FOLDER_ID <span style="color:#f92672">=</span> YOUR_FOLDER_ID
+
+DISK_PATH <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/WHERE/TO/DOWNLOAD&#39;</span>
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sha1_file</span>(path):
+    BUF_SIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">65536</span>  <span style="color:#75715e"># lets read stuff in 64kb chunks</span>
+    sha1 <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>sha1()
+
+    <span style="color:#66d9ef">with</span> open(path, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> f:
+        <span style="color:#66d9ef">while</span> True:
+            data <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read(BUF_SIZE)
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> data:
+                <span style="color:#66d9ef">break</span>
+            sha1<span style="color:#f92672">.</span>update(data)
+
+    <span style="color:#66d9ef">return</span> sha1<span style="color:#f92672">.</span>hexdigest()
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recursive_download</span>(f, parent<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
+    <span style="color:#66d9ef">if</span> f<span style="color:#f92672">.</span>_item_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;file&#39;</span>:
+        path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(parent, f<span style="color:#f92672">.</span>name)
+        
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(path) <span style="color:#f92672">and</span> f<span style="color:#f92672">.</span>sha1 <span style="color:#f92672">==</span> sha1_file(path):
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Skipping existing file:&#34;</span>, path)
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Downloading:&#34;</span>, path)
+            <span style="color:#66d9ef">with</span> open(path, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> disk_file:
+                f<span style="color:#f92672">.</span>download_to(disk_file)
+    <span style="color:#66d9ef">elif</span> f<span style="color:#f92672">.</span>_item_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;folder&#39;</span>:
+        <span style="color:#75715e"># Must be a folder</span>
+        name <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>get()<span style="color:#f92672">.</span>name
+        path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(parent, name)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Entering Directory:&#34;</span>, path)
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(path):
+            os<span style="color:#f92672">.</span>makedirs(path)
+        <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>get_items(None):
+            recursive_download(item, path)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Unknown item type:&#34;</span>, f<span style="color:#f92672">.</span>_item_type)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Downloading data files to:&#34;</span>, DISK_PATH)
+
+    oauth <span style="color:#f92672">=</span> OAuth2(client_id<span style="color:#f92672">=</span>CLIENT_ID, client_secret<span style="color:#f92672">=</span>CLIENT_SECRET)
+
+    auth_url, csrf_token <span style="color:#f92672">=</span> oauth<span style="color:#f92672">.</span>get_authorization_url(<span style="color:#e6db74">&#39;http://127.0.0.1&#39;</span>)
+
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Go to this url and grant access to the app:&#34;</span>)
+    <span style="color:#66d9ef">print</span>(auth_url)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;You will be redirected to a page that gives you an error.&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Copy and paste the whole url of that page here.&#34;</span>)
+    url <span style="color:#f92672">=</span> input()
+
+    qs <span style="color:#f92672">=</span> parse<span style="color:#f92672">.</span>parse_qs(parse<span style="color:#f92672">.</span>urlparse(url)<span style="color:#f92672">.</span>query)
+    access_token, refresh_token <span style="color:#f92672">=</span> oauth<span style="color:#f92672">.</span>authenticate(qs[<span style="color:#e6db74">&#39;code&#39;</span>][<span style="color:#ae81ff">0</span>])
+    client <span style="color:#f92672">=</span> Client(oauth)
+    user <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>user()<span style="color:#f92672">.</span>get()
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Authenticated as&#34;</span>, user<span style="color:#f92672">.</span>login)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+
+    folder <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>folder(BOX_FOLDER_ID)
+    recursive_download(folder, DISK_PATH)
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    main()</code></pre></div>
+<p>So, to use this you&rsquo;re going to have to create a new Box App.
+Go to <a href="https://app.box.com/developers/console">https://app.box.com/developers/console</a> and create a new app. The app must be of the type &ldquo;Partner Integration&rdquo;. It doesn&rsquo;t matter what you call it.</p>
+
+<p>Then click &ldquo;View App&rdquo; to find your Client ID and Client Secret.</p>
+
+<p>You will also need to change the Redirect URI to <code>http://127.0.0.1</code>. You shouldn&rsquo;t have to change any other settings. A &ldquo;Standard OAuth 2.0 (User Authentication)&rdquo; will work.</p>
+
+<p>To find the <code>BOX_FOLDER_ID</code> just navigate to the folder in Box, and the folder id will be in the URL.</p>
+
+<p>Once you put these values into the script, you should be good to go!</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="http://bkanuka.com/posts/hdcp-hdmi-capture/"><i class="fa fa-chevron-circle-left"></i> HDCP HDMI Capture</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+        <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+      (function () {
+            
+            
+            if (window.location.hostname == "localhost")
+                  return;
+
+            var disqus_loaded = false;
+            var disqus_shortname = 'bkanuka';
+            var disqus_button = document.getElementById("show-comments");
+
+            disqus_button.style.display = "";
+            disqus_button.addEventListener("click", disqus, false);
+
+            function disqus() {
+
+                  if (!disqus_loaded) {
+                        disqus_loaded = true;
+
+                        var e = document.createElement("script");
+                        e.type = "text/javascript";
+                        e.async = true;
+                        e.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                        (document.getElementsByTagName("head")[0] ||
+                              document.getElementsByTagName("body")[0])
+                        .appendChild(e);
+
+                        
+                        document.getElementById("show-comments").style.display = "none";
+                  }
+            }
+
+            
+            var hash = window.location.hash.substr(1);
+            if (hash.length > 8) {
+                  if (hash.substring(0, 8) == "comment-") {
+                        disqus();
+                  }
+            }
+
+            
+            if (/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                  disqus();
+            }
+      })();
+</script>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Bennett Kanuka | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="http://bkanuka.com/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="http://bkanuka.com/js/scripts.js"></script>
+
+</body>
+
+</html>
