@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2017 - Bennett Kanuka</copyright>
-    <lastBuildDate>Tue, 02 Jan 2018 20:16:04 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 22:15:50 -0400</lastBuildDate>
     
 	<atom:link href="http://bkanuka.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Box Cli Download</title>
+      <link>http://bkanuka.com/posts/box-cli-download/</link>
+      <pubDate>Wed, 11 Apr 2018 22:15:50 -0400</pubDate>
+      
+      <guid>http://bkanuka.com/posts/box-cli-download/</guid>
+      <description>I recently needed to download a folder from a shared Box drive programmatically. I also wanted some basic sync ability (only download the file from Box if the file has changed).
+Box has created a cli that seems to work in Windows and Mac, but guess what OS I&amp;rsquo;m using&amp;hellip;. ;-) Anyway, even if the CLI did work, I&amp;rsquo;d still need some script to call it. So I wrote my own script to do this.</description>
+    </item>
     
     <item>
       <title>HDCP HDMI Capture</title>
